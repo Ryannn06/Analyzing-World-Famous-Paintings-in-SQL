@@ -1,1 +1,1 @@
-# Analyzing-World-Famous-Paintings-in-SQL
+# SQL Case Study: World's Famous Paintings
