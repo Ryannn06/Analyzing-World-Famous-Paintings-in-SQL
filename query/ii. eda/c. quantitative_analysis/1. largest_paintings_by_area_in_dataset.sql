@@ -25,3 +25,6 @@ SELECT wo.work_id, wo.name, prod.size_id, wo.artist_id
 FROM work wo
 INNER JOIN product_size prod
 USING (work_id)
+
+SELECT AVG(open)
+FROM museum_hours;
