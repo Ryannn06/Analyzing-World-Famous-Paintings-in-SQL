@@ -232,44 +232,31 @@ The main objectives of this study are:
 
 5. Most Common Subjects in Artworks
    ```sql
-    SELECT 
-        subject,
-        COUNT(DISTINCT work_id) AS total_paintings
-    FROM work wo
-    INNER JOIN subject sub
-    USING (work_id)
-    GROUP BY subject
-    ORDER BY total_paintings DESC;
-   ```
-   *Insight*: Portraits, Nude, and Landscape art are the most common subjects in the dataset, highlighting artists’ focus on human form, nature, and personal expression.
-
-6. Most Common Subjects in Artworks by Artist
-   ```sql
     WITH subject_work AS (
         SELECT 
             wo.artist_id,
-            sub.subject,
-            COUNT(DISTINCT wo.work_id) AS total_paintings
+            wo.work_id,
+            sub.subject
         FROM work wo
-        INNER JOIN subject sub
-        USING (work_id)
-        GROUP BY wo.artist_id, sub.subject
+        INNER JOIN subject sub USING (work_id)
     ), subject_rank AS (
-            SELECT 
-                art.full_name,
-                subj.subject,
-                total_paintings,
-                RANK() OVER(PARTITION BY artist_id ORDER BY total_paintings DESC) AS rank
-            FROM subject_work subj
-            INNER JOIN artist art
-            USING (artist_id)
+        SELECT 
+            art.artist_id,
+            art.full_name,
+            subj.subject,
+            COUNT(DISTINCT subj.work_id) AS total_paintings,
+            RANK() OVER (PARTITION BY art.artist_id ORDER BY COUNT(DISTINCT subj.work_id) DESC) AS rank
+        FROM subject_work subj
+        INNER JOIN artist art USING (artist_id)
+        GROUP BY art.artist_id, art.full_name, subj.subject
     )
     SELECT 
         full_name,
         subject AS most_common_subject,
         total_paintings
-    FROM subject_rank WHERE rank = 1
-    ORDER BY full_name ASC;
+    FROM subject_rank
+    WHERE rank = 1
+    ORDER BY total_paintings DESC;
    ```
    *Insights*:
    - Vincent van Gogh primarily painted portraits, making it his most common subject.
