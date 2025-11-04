@@ -2,6 +2,7 @@
 
 ## I. Table of Contents
   [SQL Case Study: World's Famous Paintings](#sql-case-study-worlds-famous-paintings)
+- [SQL Case Study: World's Famous Paintings](#sql-case-study-worlds-famous-paintings)
   - [I. Table of Contents](#i-table-of-contents)
   - [II. Overview](#ii-overview)
   - [III. Dataset](#iii-dataset)
@@ -13,6 +14,8 @@
   - [VI. Folder Structure](#vi-folder-structure)
   - [VII. Tools Used](#vii-tools-used)
   - [VIII. Future Enhancements](#viii-future-enhancements)
+  - [IX. Author](#ix-author)
+  - [X. Acknowledgments](#x-acknowledgments)
 
 
 ## II. Overview
@@ -370,3 +373,13 @@ main/
 ## VIII. Future Enhancements
 - Visualize insights using Power BI or Python
 - Integrate queries into a dashboard
+
+## IX. Author
+Gelo (Ryan Dela Cruz)
+
+Data Analyst skilled in **SQL, Python, and Excel**, passionate about uncovering insights through data and building impactful analytical projects.
+
+## X. Acknowledgment
+Dataset by [Mexwell](https://www.kaggle.com/datasets/mexwell/famous-paintings/data) on Kaggle.
+
+Thanks to the open-source data community for making this analysis possible!
