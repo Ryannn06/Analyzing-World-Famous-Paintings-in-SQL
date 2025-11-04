@@ -1,25 +1,25 @@
 WITH subject_work AS (
     SELECT 
         wo.artist_id,
-        sub.subject,
-        COUNT(DISTINCT wo.work_id) AS total_paintings
+        wo.work_id,
+        sub.subject
     FROM work wo
-    INNER JOIN subject sub
-    USING (work_id)
-    GROUP BY wo.artist_id, sub.subject
+    INNER JOIN subject sub USING (work_id)
 ), subject_rank AS (
     SELECT 
+        art.artist_id,
         art.full_name,
         subj.subject,
-        total_paintings,
-        RANK() OVER(PARTITION BY artist_id ORDER BY total_paintings DESC) AS rank
+        COUNT(DISTINCT subj.work_id) AS total_paintings,
+        RANK() OVER (PARTITION BY art.artist_id ORDER BY COUNT(DISTINCT subj.work_id) DESC) AS rank
     FROM subject_work subj
-    INNER JOIN artist art
-    USING (artist_id)
+    INNER JOIN artist art USING (artist_id)
+    GROUP BY art.artist_id, art.full_name, subj.subject
 )
 SELECT 
     full_name,
     subject AS most_common_subject,
     total_paintings
-FROM subject_rank WHERE rank = 1
-ORDER BY full_name ASC;
+FROM subject_rank
+WHERE rank = 1
+ORDER BY total_paintings DESC;
