@@ -1,7 +1,6 @@
 # SQL Case Study: World's Famous Paintings
 
 ## <br>I. Table of Contents
-  [SQL Case Study: World's Famous Paintings](#sql-case-study-worlds-famous-paintings)
 - [SQL Case Study: World's Famous Paintings](#sql-case-study-worlds-famous-paintings)
   - [I. Table of Contents](#i-table-of-contents)
   - [II. Overview](#ii-overview)
