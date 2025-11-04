@@ -1,4 +1,4 @@
-# SQL Case Study: World's Famous Paintings
+# SQL Case Study: World's Famous Paintings<br>
 
 ## I. Table of Contents
   [SQL Case Study: World's Famous Paintings](#sql-case-study-worlds-famous-paintings)
@@ -15,13 +15,13 @@
   - [VII. Tools Used](#vii-tools-used)
   - [VIII. Future Enhancements](#viii-future-enhancements)
   - [IX. Author](#ix-author)
-  - [X. Acknowledgments](#x-acknowledgments)
+  - [X. Acknowledgment](#x-acknowledgment)
 
 
-## II. Overview
+## <br>II. Overview
 This project explores the World Famous Paintings dataset using SQL to uncover insights about artists, artworks, subjects, and styles in the dataset.
 
-## III. Dataset
+## <br>III. Dataset
 Source: [Kaggle – World Famous Paintings Dataset by Maxwell]([https://](https://www.kaggle.com/datasets/mexwell/famous-paintings))
 
 The dataset contains information about thousands of famous paintings, including:
@@ -33,13 +33,15 @@ The dataset contains information about thousands of famous paintings, including:
 - **museum_hours**: Museum open/close time
 - **image_link**: Links to the paintings’ images
 
-## IV. Objectives
+
+## <br>IV. Objectives
 The main objectives of this study are:
 - Explore the dataset using SQL queries.
 - Analyze relationships between artists, styles, and subjects.
 - Generate insights on arts, productivity, and museum distributions.
 
-## V. Key Analyses
+
+## <br>V. Key Analyses
 ### A. Quantitative Analysis
 1. Total no of Paintings
    ```sql
@@ -149,7 +151,7 @@ The main objectives of this study are:
     - Over half of the artists (55.6%) died before reaching 70.
     - Nearly 80% did not live past 80, suggesting that most artists in the dataset lived between 50–80 years.
     - Only 1% reached 90 years old, and none surpassed 100.
-### B. Categorical Analysis
+### <br>B. Categorical Analysis
 1. Most Common Styles of Paintings
     ```sql
     SELECT 
@@ -275,7 +277,7 @@ The main objectives of this study are:
    - Gilbert Stuart mostly focus on portrait paintings.
    - Pierre-Auguste Renoir frequently created nude artworks.
 
-### C. Spatial Analysis
+### <br>C. Spatial Analysis
 1. Countries with Largest Collection of Paintings
    ```sql
     SELECT 
@@ -348,7 +350,7 @@ The main objectives of this study are:
    - Claude Monet’s paintings were exhibited in 27 different museums.
    - Vincent van Gogh’s works were displayed in 22 different museums.
   
-## VI. Folder Structure
+## <br>VI. Folder Structure
 ```graphql
 main/
 │
@@ -365,21 +367,21 @@ main/
 └── readme.md                               # Project overview
 ```
 
-## VII. Tools Used
+## <br>VII. Tools Used
 - SQL (MySQL / PostgreSQL) — for querying and analysis
 - Kaggle — for dataset exploration
 - VS Code / Jupyter Notebook — for SQL and markdown documentation
 
-## VIII. Future Enhancements
+## <br>VIII. Future Enhancements
 - Visualize insights using Power BI or Python
 - Integrate queries into a dashboard
 
-## IX. Author
+## <br>IX. Author
 Gelo (Ryan Dela Cruz)
 
 Data Analyst skilled in **SQL, Python, and Excel**, passionate about uncovering insights through data and building impactful analytical projects.
 
-## X. Acknowledgment
+## <br>X. Acknowledgment
 Dataset by [Mexwell](https://www.kaggle.com/datasets/mexwell/famous-paintings/data) on Kaggle.
 
 Thanks to the open-source data community for making this analysis possible!
