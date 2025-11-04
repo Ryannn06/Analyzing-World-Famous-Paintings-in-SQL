@@ -1,0 +1,2 @@
+SELECT COUNT(DISTINCT museum_id)
+FROM museum;

@@ -1,0 +1,2 @@
+SELECT COUNT(DISTINCT work_id)
+FROM work;

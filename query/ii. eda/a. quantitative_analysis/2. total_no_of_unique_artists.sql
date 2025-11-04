@@ -1,0 +1,2 @@
+SELECT COUNT(DISTINCT artist_id)
+FROM artist;
