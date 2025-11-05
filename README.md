@@ -10,6 +10,7 @@
     - [A. Quantitative Analysis](#a-quantitative-analysis)
     - [B. Categorical Analysis](#b-categorical-analysis)
     - [C. Spatial Analysis](#c-spatial-analysis)
+    - [D. Temporal Analysis](#d-temporal-analysis)
   - [VI. Folder Structure](#vi-folder-structure)
   - [VII. Tools Used](#vii-tools-used)
   - [VIII. Future Enhancements](#viii-future-enhancements)
@@ -336,6 +337,33 @@ The main objectives of this study are:
    - Claude Monet’s paintings were exhibited in 27 different museums.
    - Vincent van Gogh’s works were displayed in 22 different museums.
   
+### <br>D. Temporal Analysis
+1. Average Open, Close, and Duration Time per Day
+   ```sql
+    SELECT
+        day,
+        TO_CHAR(AVG(open), 'HH24:MI') AS avg_open_time,
+        TO_CHAR(AVG(close), 'HH24:MI') AS avg_close_time,
+        TO_CHAR((AVG(close) - AVG(open)), 'HH24:MI') AS avg_duration
+    FROM museum_hours
+    GROUP BY day
+    ORDER BY avg_duration DESC;
+   ```
+
+2. Average Open, Close, and Duration Time per Museum
+   ```sql
+    SELECT
+        mus.name AS museum,
+        TO_CHAR(AVG(muh.open), 'HH24:MI') AS opening_time,
+        TO_CHAR(AVG(muh.close), 'HH24:MI') AS closing_time,
+        TO_CHAR((AVG(muh.close) - AVG(muh.open)), 'HH24:MI') AS avg_duration
+    FROM museum_hours muh
+    INNER JOIN museum mus
+    USING (museum_id)
+    GROUP BY muh.museum_id, mus.name
+    ORDER BY avg_duration;
+   ```
+
 ## <br>VI. Folder Structure
 ```graphql
 main/
