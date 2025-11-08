@@ -382,8 +382,9 @@ main/
 ```
 
 ## <br>VII. Tools Used
-- SQL (MySQL / PostgreSQL) — for querying and analysis
+- SQL (PostgreSQL) — for querying and analysis
 - Kaggle — for dataset exploration
+- Python (Pandas, SQLAlchemy) - for preprocessing and database import
 - VS Code / Jupyter Notebook — for SQL and markdown documentation
 
 ## <br>VIII. Future Enhancements
